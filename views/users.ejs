@@ -1,0 +1,13 @@
+<h2>Users</h2>
+<form method="POST" action="/users">
+  <input name="name" placeholder="User Name" required>
+  <button type="submit">Add User</button>
+</form>
+<ul>
+  <% users.forEach(user => { %>
+    <li>
+      <%= user.name %>
+      [<a href="/user/<%= user._id %>">View Loans</a>]
+    </li>
+  <% }) %>
+</ul>

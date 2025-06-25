@@ -1,0 +1,11 @@
+<h2>All Loans</h2>
+<a href="/add">Add Loan</a> | <a href="/users">Add User</a>
+<ul>
+  <% loans.forEach(loan => { %>
+    <li>
+      <a href="/loan/<%= loan._id %>">
+        <%= loan.userId.name %> - ₹<%= loan.amount %>
+      </a>
+    </li>
+  <% }) %>
+</ul>

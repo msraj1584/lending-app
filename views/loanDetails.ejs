@@ -1,0 +1,12 @@
+<h2><%= loan.userId.name %> - ₹<%= loan.amount %></h2>
+<p>Balance: ₹<%= loan.balance %></p>
+<h3>Repayments</h3>
+<ul>
+  <% loan.repayments.forEach(r => { %>
+    <li>₹<%= r.amount %> on <%= r.date.toDateString() %></li>
+  <% }) %>
+</ul>
+<form method="POST" action="/loan/<%= loan._id %>/repay">
+  Add Repayment: <input name="amount" type="number" required>
+  <button type="submit">Save</button>
+</form>

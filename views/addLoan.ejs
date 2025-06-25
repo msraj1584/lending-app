@@ -1,0 +1,12 @@
+<h2>Add Loan</h2>
+<form method="POST" action="/add">
+  User:
+  <select name="userId" required>
+    <% users.forEach(user => { %>
+      <option value="<%= user._id %>"><%= user.name %></option>
+    <% }) %>
+  </select><br>
+  Amount: <input name="amount" type="number" required><br>
+  Remarks: <input name="remarks"><br>
+  <button type="submit">Add</button>
+</form>
